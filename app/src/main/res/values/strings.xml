@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Тетрис</string>
+    <string name="bill">Ваш счет: </string>
+</resources>

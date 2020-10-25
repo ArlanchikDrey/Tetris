@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="score"
+            type="com.xxx_market.tetris.model.ModelScore" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:src="@drawable/tetris_theme"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="250dp"/>
+
+        <LinearLayout
+            android:id="@+id/mainActivity_linearLayout_0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/mainActivity_title_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TitleTextTheme" />
+
+            <TextView
+                android:id="@+id/tv_high_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SubTitleTextTheme"
+                android:text="@{score.score}"
+                android:layout_marginTop="@dimen/layout_margin_top"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <!-- Aligns child elements to the centre of view group -->
+                <Button
+                    android:id="@+id/btn_new_game"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New game"/>
+                <Button
+                    android:id="@+id/btn_reset_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reset score"/>
+                <Button
+                    android:id="@+id/btn_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="exit"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>
