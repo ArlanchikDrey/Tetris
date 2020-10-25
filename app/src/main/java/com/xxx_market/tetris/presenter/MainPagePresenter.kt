@@ -2,6 +2,7 @@ package com.xxx_market.tetris.presenter
 
 import android.content.Context
 import android.graphics.Color
+import android.media.MediaPlayer
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -11,6 +12,28 @@ import moxy.MvpPresenter
 import java.lang.Exception
 
 class MainPagePresenter: MvpPresenter<MainPageView>() {
+    private var mediaPlayer: MediaPlayer? = null
+
+    fun initMusic(context: Context){
+        if(mediaPlayer == null){
+            mediaPlayer = MediaPlayer.create(context, R.raw.galaxy)
+        }
+        mediaPlayer?.start()
+        mediaPlayer?.isLooping = true
+    }
+
+    fun pauseMusic(){
+        mediaPlayer?.pause()
+    }
+
+    fun stopMusic(){
+        mediaPlayer?.stop()
+    }
+
+    fun resetMusic(){
+        mediaPlayer?.reset()
+    }
+
     fun drawTitle(context: Context){
         viewState.drawTitle(setTitleColor(context))
     }

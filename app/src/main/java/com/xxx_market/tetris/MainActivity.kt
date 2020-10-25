@@ -35,13 +35,21 @@ class MainActivity : MvpAppCompatActivity(), MainPageView {
         binding.score = modelScore
 
         presenter.drawTitle(applicationContext)
+        presenter.initMusic(applicationContext)
+    }
 
+    override fun onPause() {
+        super.onPause()
+        presenter.pauseMusic()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.stopMusic()
     }
 
     override fun drawTitle(spans: SpannableString) {
         mainActivity_title_0.text = spans
     }
 
-    override fun updateScore() {
-    }
 }
