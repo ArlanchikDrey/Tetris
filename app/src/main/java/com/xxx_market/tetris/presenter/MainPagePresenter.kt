@@ -7,6 +7,7 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import com.xxx_market.tetris.R
+import com.xxx_market.tetris.model.AppPreferences
 import com.xxx_market.tetris.view.MainPageView
 import moxy.MvpPresenter
 import java.lang.Exception
@@ -20,6 +21,10 @@ class MainPagePresenter: MvpPresenter<MainPageView>() {
         }
         mediaPlayer?.start()
         mediaPlayer?.isLooping = true
+    }
+
+    fun getScore(appPreferences: AppPreferences){
+        viewState.getScore(appPreferences.getHighScore())
     }
 
     fun pauseMusic(){

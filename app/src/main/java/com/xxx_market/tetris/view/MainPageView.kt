@@ -8,4 +8,6 @@ import moxy.viewstate.strategy.StateStrategyType
 @StateStrategyType(value = OneExecutionStateStrategy::class)
 interface MainPageView: MvpView {
     fun drawTitle(spans: SpannableString)
+
+    fun getScore(score: Int)
 }
