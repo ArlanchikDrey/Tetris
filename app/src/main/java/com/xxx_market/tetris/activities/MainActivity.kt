@@ -1,8 +1,9 @@
-package com.xxx_market.tetris
+package com.xxx_market.tetris.activities
 
 import android.os.Bundle
 import android.text.SpannableString
 import androidx.databinding.DataBindingUtil
+import com.xxx_market.tetris.R
 import com.xxx_market.tetris.components.DaggerMainActivityComponent
 import com.xxx_market.tetris.databinding.ActivityMainBinding
 import com.xxx_market.tetris.model.AppPreferences
@@ -34,7 +35,9 @@ class MainActivity : MvpAppCompatActivity(), MainPageView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.activity_main
+        )
         DaggerMainActivityComponent.builder().appModule(AppModule(application)).build().inject(this)
         presenter.drawTitle(applicationContext)
         presenter.initMusic(applicationContext)
