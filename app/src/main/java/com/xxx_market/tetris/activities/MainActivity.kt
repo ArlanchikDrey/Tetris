@@ -2,11 +2,14 @@ package com.xxx_market.tetris.activities
 
 import android.os.Bundle
 import android.text.SpannableString
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.xxx_market.tetris.R
+import com.xxx_market.tetris.components.DaggerFrameComponent
 import com.xxx_market.tetris.components.DaggerMainActivityComponent
 import com.xxx_market.tetris.databinding.ActivityMainBinding
 import com.xxx_market.tetris.model.AppPreferences
+import com.xxx_market.tetris.model.Frame
 import com.xxx_market.tetris.model.ModelScore
 import com.xxx_market.tetris.modules.AppModule
 import com.xxx_market.tetris.presenter.MainPagePresenter
