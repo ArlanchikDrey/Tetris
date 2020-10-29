@@ -1,13 +1,9 @@
 package com.xxx_market.tetris
 
-import com.xxx_market.tetris.components.DaggerFrameComponent
-import com.xxx_market.tetris.model.AppPreferences
 import com.xxx_market.tetris.model.Frame
-import com.xxx_market.tetris.presenter.MainPagePresenter
 import org.junit.Test
 import org.junit.Assert.*
 import java.lang.Exception
-import javax.inject.Inject
 
 /**
  * Example local unit test, which will execute on the development machine (host).

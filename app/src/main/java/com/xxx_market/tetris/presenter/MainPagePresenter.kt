@@ -1,26 +1,20 @@
 package com.xxx_market.tetris.presenter
 
-import android.content.Context
 import android.graphics.Color
-import android.media.MediaPlayer
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
-import com.xxx_market.tetris.R
 import com.xxx_market.tetris.model.AppPreferences
 import com.xxx_market.tetris.view.MainPageView
 import moxy.MvpPresenter
 import java.lang.Exception
 
 class MainPagePresenter: MvpPresenter<MainPageView>() {
-    private var mediaPlayer: MediaPlayer? = null
 
-    fun initMusic(context: Context){
-        if(mediaPlayer == null){
-            mediaPlayer = MediaPlayer.create(context, R.raw.galaxy)
-        }
-        mediaPlayer?.start()
-        mediaPlayer?.isLooping = true
+    private var position:Int? = 0
+
+    fun initMusic(){
+       viewState.startMusic()
     }
 
     fun getScore(appPreferences: AppPreferences){
@@ -28,23 +22,24 @@ class MainPagePresenter: MvpPresenter<MainPageView>() {
     }
 
     fun pauseMusic(){
-        mediaPlayer?.pause()
-    }
-
-    fun stopMusic(){
-        mediaPlayer?.stop()
+        viewState.pauseMusic()
     }
 
     fun resetMusic(){
-        mediaPlayer?.reset()
+        viewState.resetMusic()
     }
 
-    fun drawTitle(context: Context){
-        viewState.drawTitle(setTitleColor(context))
+    fun drawTitle(text: String){
+        viewState.drawTitle(setTitleColor(text))
     }
 
-    private fun setTitleColor(context: Context) : SpannableString {
-        val text = context.resources.getString(R.string.app_name)
+    fun setPosition(position: Int?){
+        this.position = position
+    }
+
+    fun getPosition():Int? = position
+
+    private fun setTitleColor(text: String) : SpannableString {
         val spans = SpannableString(text)
 
         for (i in text.indices) {

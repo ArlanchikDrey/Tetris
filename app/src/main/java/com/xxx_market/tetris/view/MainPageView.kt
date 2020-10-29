@@ -10,4 +10,10 @@ interface MainPageView: MvpView {
     fun drawTitle(spans: SpannableString)
 
     fun getScore(score: Int)
+
+    fun startMusic()
+
+    fun pauseMusic()
+
+    fun resetMusic()
 }
