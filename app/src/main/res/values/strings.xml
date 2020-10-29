@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Тетрис</string>
-    <string name="bill">Ваш счет: </string>
+    <string name="app_name">Tetris</string>
+    <string name="bill">High score: </string>
 </resources>
